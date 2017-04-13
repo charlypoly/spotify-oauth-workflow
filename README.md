@@ -7,8 +7,8 @@ Just clone and add "connect with Spotify" to your webapp !
 - `npm i -g typescript`
 - `cp server/config.example.ts server/config.ts`
 - *update server/config.ts* with your Spotify Application informations
-- `tsc`
-- `node dist/server/server.js`
+- `npm run build`
+- `npm run serve`
 
 
 ### Preview
