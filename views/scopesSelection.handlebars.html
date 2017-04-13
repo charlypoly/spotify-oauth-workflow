@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spotify Connect</title>
+</head>
+<body>
+    <h2>
+        Connect with Spotify
+    </h2>
+    <form action="/auth/connect">
+        {{#each scopes as |value key|}}
+            <p>
+                <input type="checkbox" name='scopes[{{value}}]' id='scopes[{{value}}]' value="1" checked>
+                <label for="scopes[{{value}}]">
+                    {{lookup ../labels value}}
+                </label>
+            </p>
+        {{else}}
+            <p>
+                Read your publicly available information
+            </p>
+        {{/each}}
+
+        <input type="submit" value='Connect'>
+    </form>
+</body>
+</html>
