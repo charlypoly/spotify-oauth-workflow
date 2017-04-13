@@ -1,6 +1,6 @@
 {
   "name": "spotify-oauth-workflow",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Boilerplate for Webapp using Spotify OAuth Connect",
   "main": "dist/server/server.js",
   "scripts": {
