@@ -4,7 +4,8 @@
   "description": "Boilerplate for Webapp using Spotify OAuth Connect",
   "main": "dist/server/server.js",
   "scripts": {
-    "test": "test"
+    "build": "tsc",
+    "serve": "node dist/server/server.js"
   },
   "repository": {
     "type": "git",
