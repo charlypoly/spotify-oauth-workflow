@@ -57,8 +57,9 @@ app.get('/auth/',
 
 app.get('/auth/connect',
   (req: express.Request, res: express.Response, next) => {
+    req.session.spotifyScopes = req.query.scopes ? Object.keys(req.query.scopes) : config.spotify.scopes;
     return passport.authenticate('spotify', {
-      scope: req.query.scopes ? Object.keys(req.query.scopes) : config.spotify.scopes
+      scope: req.session.spotifyScopes
     })(req, res, next);
   },
   (req: express.Request, res: express.Response) => {
@@ -70,7 +71,7 @@ app.get('/auth/connect',
 app.get('/auth/callback',
   passport.authenticate('spotify'),
   (req: express.Request, res: express.Response) => {
-    res.redirect('/');
+    res.redirect('/app');
   }
 );
 
@@ -81,7 +82,7 @@ app.get('/auth/logout', (req: express.Request, res: express.Response) => {
 
 app.get('/',
   (req: express.Request, res: express.Response) => {
-    res.render('index.handlebars.html', { user: req.user });
+    res.render('index.handlebars.html');
   }
 );
 
@@ -94,7 +95,7 @@ app.get('/app',
     }
   },
   (req: express.Request, res: express.Response) => {
-    res.render('app.handlebars.html');
+    res.render('app.handlebars.html', { user: req.user });
   }
 );
 

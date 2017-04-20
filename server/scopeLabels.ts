@@ -15,4 +15,5 @@ export const SCOPE_LABELS = {
     'user-modify-playback-state': 'Read your current playing activity',
     'user-read-currently-playing': 'Read your current playing tracks',
     'user-read-playback-state': 'Manage your current playing activity',
+    'user-read-recently-played': 'Access your recently played tracks'
 };

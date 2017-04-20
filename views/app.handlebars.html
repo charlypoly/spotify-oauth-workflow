@@ -5,12 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My app</title>
+    <style>
+      html {
+        height: 100%;
+      }
+
+      body {
+        background: #000 center center no-repeat;
+        color: #FFFFFF;
+        font-family: 'Karla', sans-serif;
+        user-select: none;
+      }
+
+      h3 {
+        font-family: 'Karla', sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 14px;
+        letter-spacing: 2px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+      }
+
+      input[type="text"] {
+        border-bottom: 1px #2F2F2F solid;
+        text-align: center;
+        font-family: 'Karla', sans-serif;
+        font-size: 24px;
+        line-height: 28px;
+        color: #FFFFFF;
+        background-color: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        padding: 8px;
+      }
+
+      input[type="text"]::placeholder {
+        color: #565656;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      .primaryButton {
+        display: inline-block;
+        margin-top: 50px;
+        background-color: #2EBD59;
+        border-radius: 100px;
+        padding: 21px 40px;
+        font-family: 'Karla', sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 18px;
+        color: #FFFFFF;
+        border: none;
+      }
+
+      .primaryButton:hover, .primaryButton:visited, .primaryButton:active {
+        color: #FFFFFF;
+        text-decoration: none;
+      }
+    </style>
 </head>
 <body>
     <div>
-        <p>
-            Welcome {{ user.username }}!
-        </p>
+        <h3>
+            Welcome {{ user.displayName }}!
+        </h3>
     </div>
 </body>
 </html>
